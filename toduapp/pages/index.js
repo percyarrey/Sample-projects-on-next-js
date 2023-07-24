@@ -130,7 +130,7 @@ export default function Home({tasks}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main style={{minHeight:"calc(90vh)"}}>
+      <main style={{minHeight:"calc(97vh)"}}>
           <div>
             <h1 className='fw-bold text-center fst-italic text-primary-emphasis mt-3'>ToduList App</h1>
 
