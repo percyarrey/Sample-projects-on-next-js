@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main>
+    <main className='max-h-screen overflow-hidden'>
       <div className="bg-white">
       
       {/* HERO */}

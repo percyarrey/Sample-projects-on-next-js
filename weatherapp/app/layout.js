@@ -21,29 +21,29 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     <body>
-      <Provider>
-        <ToastContainer
-              position="top-center"
-              autoClose={2000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="light"
-              />
-        <div className='flex'>
-          <Navbar/>
-          <div className='flex-1 py-3'>
-              
-              <Suspense fallback={<Loading/>}>
-              {children}
-              </Suspense>
+        <Provider>
+          <ToastContainer
+                position="top-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                />
+          <div className='flex'>
+            <Navbar/>
+            <div className='flex-1 py-3'>
+                
+                <Suspense fallback={<Loading/>}>
+                {children}
+                </Suspense>
+            </div>
           </div>
-        </div>
-      </Provider>
+        </Provider>
     </body>
     </html>
   )

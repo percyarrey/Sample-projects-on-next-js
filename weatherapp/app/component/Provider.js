@@ -7,6 +7,9 @@ import { useTheme } from 'next-themes';
 
 import "react-toastify/dist/ReactToastify.css"
 
+//NEXT AUTH
+import {SessionProvider} from 'next-auth/react'
+
 //REACT REDUX
 import { store } from '../../redux/store'
 import { Provider as ProviderRedux} from 'react-redux'
@@ -51,11 +54,13 @@ export default function Provider({children}) {
               </div>)
   }
   return (
+    <SessionProvider>
     <ProviderRedux store={store}>
       <ThemeProvider enableSystem={"true"} attribute='class'>
         {children}
       </ThemeProvider>
     </ProviderRedux>
+    </SessionProvider>
     
   )
 }

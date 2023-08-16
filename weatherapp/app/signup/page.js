@@ -11,6 +11,11 @@ import {MoonLoader} from 'react-spinners'
 import { useRouter } from 'next/navigation'
 
 import { useTheme } from 'next-themes'
+
+//NEXT AUTH
+import GoogleButton from 'react-google-button'
+
+import { signIn } from 'next-auth/react'
 export default function page() {
   const {theme ,setTheme} = useTheme()
   const [data,setData] = useState({
@@ -123,10 +128,10 @@ export default function page() {
                     <button type="submit" onClick={handleSubmit} className="w-full text-white bg-blue-600 hover:bg-blue-700  focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{loading ? <div className='w-full h-full flex justify-center'><MoonLoader color='white' size={20}/></div>:<span>Sign in</span>}</button>
 
                     {/* GOOGLE */}
-                    <button className="w-full text-black bg-slate-400 bg-opacity-5 border-2 border-slate-300 hover:bg-slate-200  focus:ring-2 focus:outline-none focus:ring-blue-300 font-semibold text-opacity-80 rounded-lg text-md px-5 py-2.5 text-center
-                     dark:bg-slate-900 dark:bg-opacity-5 dark:hover:bg-slate-900 dark:focus:ring-blue-800 dark:text-white flex justify-center gap-2"><BsGoogle className='mt-1' color='red'/>Sign in with Google</button>
+                    {/* <button className="w-full text-black bg-slate-400 bg-opacity-5 border-2 border-slate-300 hover:bg-slate-200  focus:ring-2 focus:outline-none focus:ring-blue-300 font-semibold text-opacity-80 rounded-lg text-md px-5 py-2.5 text-center
+                     dark:bg-slate-900 dark:bg-opacity-5 dark:hover:bg-slate-900 dark:focus:ring-blue-800 dark:text-white flex justify-center gap-2"><BsGoogle className='mt-1' color='red'/>Sign in with Google</button> */}
+                    <GoogleButton onClick={()=>signIn('google')} style={{width:"100%"}}  className=' mx-auto ' />
 
-                    
                     <div>
                       <p className="text-md font-light text-gray-500 dark:text-gray-400">
                           Already have an Account? <Link href="/login" className="font-semibold text-blue-600 hover:underline dark:text-blue-500">Log In</Link>
