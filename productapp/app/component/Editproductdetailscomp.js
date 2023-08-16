@@ -155,20 +155,20 @@ export default function Editproductdetailscomp({datar}) {
   //SELECT CATEGORY
   const currencies = [
     {
-      value: 'USD',
-      label: '$',
+      value: 'Laptop',
+      label: 'Laptop',
     },
     {
-      value: 'EUR',
-      label: '€',
+      value: 'Gaming Console',
+      label: 'Gaming Console',
     },
     {
-      value: 'BTC',
-      label: '฿',
+      value: 'Television',
+      label: 'Television',
     },
     {
-      value: 'JPY',
-      label: '¥',
+      value: 'Acessories',
+      label: 'Acessories',
     },
   ];
     

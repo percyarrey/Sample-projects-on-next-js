@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import { stringify } from 'querystring'
+import Image from 'next/image'
 
 export default function Editproductcomp({data}) {
   const router = useRouter()
@@ -68,7 +69,7 @@ export default function Editproductcomp({data}) {
           <Box maxHeight={'45vh'} width={'100vw'} overflow={'hidden'} padding={'2vh'} display={'flex'} justifyContent={'center'}>
         <Grid className={styles.myhover}  width={'90vw'} container spacing={1} boxShadow={10} height={'100%'}>
           <Grid item xs={6} display={'flex'} justifyContent={'center'} height={'100%'} md={5} overflow={'hidden'} lg={5}>
-            <img src={data.image} style={{objectFit:'contain',height:'45vh'}}/>
+            <Image src={data.image} height={300} width={300} alt={data.productname}/>
           </Grid>
           <Grid item xs={5}  height={'43vh'} md={6} lg={6}>
             <Box  height={'100%'} justifyContent={'space-between'} display={'flex'} flexDirection={'column'}>
