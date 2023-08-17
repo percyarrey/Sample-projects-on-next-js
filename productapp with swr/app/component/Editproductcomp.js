@@ -7,11 +7,21 @@ import styles from '@/app/page.module.css'
 import { useRouter } from 'next/navigation'
 import axios from 'axios'
 import {toast} from 'react-toastify'
-import { stringify } from 'querystring'
 import Image from 'next/image'
+import useSWR from 'swr'
 
+const fetcher = async() =>{
+  const res = await fetch('/api/crudproduct')
+  const data =await res.json()
+  return data.data
+}
 
 export default function Editproductcomp({data}) {
+
+  const Response = useSWR('/api/crudproduct', fetcher)
+  console.log('is Loading ' + Response.isLoading)
+  console.log(Response.data)
+
   const router = useRouter()
   //HANDLE DELETE
   const handleDelete =async ()=>{

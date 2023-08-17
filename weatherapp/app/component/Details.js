@@ -34,7 +34,7 @@ export default function Details() {
                 <img src={imgloc()} className='h-[4.6rem]'/>
             </div>
         </div>
-        <div className='mt-2 mb-2 my-text '>TODAY'S FORECAST</div>
+        <div className='mt-2 mb-2 my-text '>{"TODAY'S"} FORECAST</div>
         <div className='flex'>
             <Forecast />
             <Forecast />
